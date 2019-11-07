@@ -7,7 +7,7 @@ const path = require('path');
 const engine = require('ejs-locals');
 
 const app = express();
-const config = require('./config');
+const config = require('./config/config.example');
 const routes = require('./app/routes');
 
 mongoose.connect(config.dbURI);
@@ -36,6 +36,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(routes);
+
 app.listen(config.port, () => {
   console.log(`Server running on port ${config.port}`);
 });
