@@ -7,17 +7,18 @@ const path = require('path');
 const engine = require('ejs-locals');
 
 const app = express();
-const config = require('./config');
-const routes = require('./app/routes');
+app.use(express.static(path.join(__dirname, 'public')));
+
+const config = require('./config/config.example');
+const routes = require('./app/routes/index');
 
 mongoose.connect(config.dbURI);
-app.use(express.static(path.join(__dirname, 'public')));
+
 
 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.engine('ejs', engine);
 app.set('view engine', 'ejs');
 
 
@@ -48,7 +49,7 @@ app.use(bodyParser.urlencoded({
 app.use(routes);
 
 //routes
-app.get("/test/login",(req,res)=>{
+app.get("/",(req,res)=>{
    res.render("login.ejs");
 });
 
