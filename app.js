@@ -37,6 +37,11 @@ app.use(bodyParser.urlencoded({
 
 app.use(routes);
 
+//routes
+app.get("/test/login",(req,res)=>{
+  res.render("login.ejs");
+});
+
 app.listen(config.port, () => {
   console.log(`Server running on port ${config.port}`);
 });
