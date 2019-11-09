@@ -9,8 +9,8 @@ const engine = require('ejs-locals');
 const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 
-const config = require('./config/config.example');
-const routes = require('./app/routes/index');
+const config = require('./config');
+const routes = require('./app/routes');
 
 mongoose.connect(config.dbURI);
 
