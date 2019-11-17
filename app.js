@@ -7,16 +7,17 @@ const path = require('path');
 const engine = require('ejs-locals');
 
 const app = express();
-const config = require('./config/config');
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+const config = require('./config');
 const routes = require('./app/routes');
 
-mongoose.connect(config.dbURI,{ useNewUrlParser: true });
-app.use(express.static(path.join(__dirname, 'public')));
+mongoose.connect(config.dbURI);
 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.engine('ejs', engine);
 app.set('view engine', 'ejs');
 
 
@@ -47,7 +48,7 @@ app.use(bodyParser.urlencoded({
 app.use(routes);
 
 //routes
-app.get("/test/login",(req,res)=>{
+app.get("/",(req,res)=>{
    res.render("login.ejs");
 });
 
