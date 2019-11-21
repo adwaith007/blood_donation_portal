@@ -18,6 +18,11 @@
 
     sudo service mongod start
 
+ Copy configuration files and make changes in it. Make changes only in index.js file and not in config.example.js file.
+ 
+
+    cp config/config.example.js config/index.js
+
  Start your app using the following command
 
     npm start
@@ -25,8 +30,6 @@
 Try hitting localhost:3000/test on your browser. If you get this message then your installtion is successful.
 
     {"success":true}
-
 ### Developing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md)
-See [CODEOFCONDUCT.md](CODEOFCONDUCT.md)
