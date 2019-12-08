@@ -10,7 +10,7 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-const config = require('./config');
+const config = require('./config/index');
 const routes = require('./app/routes');
 
 mongoose.connect(config.dbURI);
