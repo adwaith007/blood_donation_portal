@@ -4,8 +4,21 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "check:js": "prettier --check ./src/**/*.{js,jsx}",
+    "format:js": "prettier --write ./src/**/*.{js,jsx}",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "author": "",
   "license": "ISC",
@@ -17,5 +30,10 @@
     "express-session": "^1.17.0",
     "mongoose": "^5.7.6",
     "passport": "^0.4.0"
+  },
+  "devDependencies": {
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1"
   }
 }
