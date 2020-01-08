@@ -1,10 +1,22 @@
 const mongoose = require("mongoose");
 const requestSchema = new mongoose.Schema({
-  id: String,
-  name: String,
-  bloodGroup: String,
+  id: {
+        type  :String,
+        required : true
+    },
+  name: {
+        type  :String,
+        required : true
+    },
+  bloodGroup: {
+        type  :String,
+        required : true
+    },
   createdOn: Date,
-  requestStatus: String
+  requestStatus: {
+        type  :String,
+        required : true
+    }
 });
 
 const Request = mongoose.model("requests", requestSchema);

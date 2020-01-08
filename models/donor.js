@@ -1,8 +1,16 @@
 const mongoose = require("mongoose");
 const donorSchema = new mongoose.Schema({
-  name: String,
-  bloodGroup: String,
-  mobileNumber: Number
+  name: {
+        type  :String,
+        required : true
+    },
+  bloodGroup: {
+        type  :String,
+        required : true
+    },
+  mobileNumber: {
+        type  :Number,
+    }
 });
 
 const Donor = mongoose.model("donors", donorSchema);

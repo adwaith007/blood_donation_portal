@@ -1,11 +1,26 @@
 const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema({
-  username: String,
-  googleId: String,
-  email: String,
-  mobile: Number,
-  ftlFlag: Boolean,
-  isAdmin: Boolean
+  username: {
+        type  :String,
+        required : true
+    },
+  googleId: {
+        type  :String,
+        required : true
+    },
+  email: {
+        type  :String,
+        required : true
+    },
+  mobile: {
+        type  :Number,
+    },
+  ftlFlag: {
+        type  :Boolean
+    }, //first time login flag 
+  isAdmin: {
+        type  :Boolean
+    }
 });
 
 const User = mongoose.model("users", userSchema);
