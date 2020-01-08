@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const requestSchema = new mongoose.Schema({
   requesterId: String,
-  requesterName: String,
-  requestBloodGroup: String,
+  name: String,
+  bloodGroup: String,
   createdOn: Date,
   requestStatus: String
 });

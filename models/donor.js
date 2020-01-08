@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const donorSchema = new mongoose.Schema({
-  donorName: String,
-  donorBloodGroup: String,
-  donorMobileNumber: Number
+  name: String,
+  bloodGroup: String,
+  mobileNumber: Number
 });
 
 const Donor = mongoose.model("donors", donorSchema);
