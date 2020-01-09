@@ -13,5 +13,5 @@ const donorSchema = new mongoose.Schema({
     }
 });
 
-const Donor = mongoose.model("donors", donorSchema);
+const Donor = mongoose.model("Donor", donorSchema);
 module.exports = Donor;

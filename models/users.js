@@ -15,13 +15,13 @@ const userSchema = new mongoose.Schema({
   mobile: {
         type  :Number,
     },
-  ftlFlag: {
+  isVerified: {
         type  :Boolean
-    }, //first time login flag 
+    },
   isAdmin: {
         type  :Boolean
     }
 });
 
-const User = mongoose.model("users", userSchema);
+const User = mongoose.model("User", userSchema);
 module.exports = User;

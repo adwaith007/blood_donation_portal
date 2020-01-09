@@ -4,8 +4,9 @@ const requestSchema = new mongoose.Schema({
         type  :String,
         required : true
     },
-  name: {
-        type  :String,
+  owner: {
+        type: mongoose.Schema.Types.ObjectId, 
+        ref:"User",
         required : true
     },
   bloodGroup: {
@@ -19,5 +20,5 @@ const requestSchema = new mongoose.Schema({
     }
 });
 
-const Request = mongoose.model("requests", requestSchema);
+const Request = mongoose.model("Request", requestSchema);
 module.exports = Request;
