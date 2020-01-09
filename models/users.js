@@ -1,26 +1,27 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema({
-    name: {
+  username: {
         type  :String,
         required : true
     },
-    email: {
-        type:String,
+  googleId: {
+        type  :String,
         required : true
     },
-    password: {
-        type : String,
+  email: {
+        type  :String,
         required : true
     },
-    createdon: {
-        type:Date,
-        default: Date.now
+  mobile: {
+        type  :Number,
     },
-    phone: {
-        type: String,
-        required: true
+  ftlFlag: {
+        type  :Boolean
+    }, //first time login flag 
+  isAdmin: {
+        type  :Boolean
     }
 });
 
-const User = mongoose.model('users', userSchema);
-module.exports = User; 
+const User = mongoose.model("users", userSchema);
+module.exports = User;
