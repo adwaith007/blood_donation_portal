@@ -7,7 +7,7 @@
     "check:js": "prettier --check ./src/**/*.{js,jsx}",
     "format:js": "prettier --write ./src/**/*.{js,jsx}",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app"
+    "start": "node_modules/.bin/nodemon app.js"
   },
   "lint-staged": {
     "*": [
@@ -29,7 +29,9 @@
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "mongoose": "^5.7.6",
-    "passport": "^0.4.0"
+    "nodemon": "^2.0.2",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^2.0.0"
   },
   "devDependencies": {
     "husky": "^3.1.0",
