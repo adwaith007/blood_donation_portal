@@ -1,0 +1,250 @@
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    </head>
+<body>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<style type="text/css" >
+        .container-fluid{
+            background-image: url("http://demo.geekslabs.com/materialize/v2.1/layout03/images/user-profile-bg.jpg");
+            background-attachment: fixed;
+
+            }
+
+            .table{
+              background: rgb(248,248,255, 0.5);
+              font-size: 17px;
+
+            }
+
+            .page-footer{
+                background: rgb(248,248,255);
+            }
+
+
+
+
+    </style>
+  <div class="container-fluid" >
+    <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Blood Donation Portal</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="#">Home <span class="sr-only"></span></a>
+        <a class="nav-item nav-link" href="#">Ongoing Donations</a>
+        <a class="nav-item nav-link" href="#">Requested Donations</a>
+        <a class="nav-item nav-link" href="#" tabindex="-1" aria-disabled="true">Logout</a>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <br>
+    <div class="jumbotron">
+  <h1 class="display-4">Hello, Admin!</h1>
+  <p class="lead">Blood Donation Request Pending: 15</p>
+  <hr class="my-4">
+  <p>Modal to check for history of the patient. An example is given for development.</p>
+</div>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Blood Group</th>
+      <th scope="col">Patient (Click URL)</th>
+      <th scope="col col-lg-2">Urgency</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>B+</td>
+      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">Patient Name 1 </button>
+
+        <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalScrollableTitle">History of the Patient</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+University Medical Center, Dept. of Pathology Report Date/Time:
+<br>
+123 University Way, City, ST 12345 02/10/2014 16:40 <br>
+<br>
+Name: Doe, John Q. Age/Sex: 73/M DOB: 01/01/1941
+<br>
+Patient ID: 987654321 Status: Routine
+<br>
+Ordering Dr: Smith, Peter MD Physician Copy for: Smith, Jane MD
+<br><br>
+SPEC #: 223456 Collection Date/Time: 02/10/14 14:30<br>
+Received Date/Time: 02/10/14 15:00<br>
+SPECIMEN: Whole blood<br>
+ORDERED: Complete Blood Count and White Blood<br>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div></td>
+      <td>High</td>
+      <td><button type="button" class="btn btn-success">Connect</button>
+        <button type="button" class="btn btn-danger">Reject</button></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>B+</td>
+      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">Patient Name 2 </button>
+
+        <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalScrollableTitle">History of the Patient</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+University Medical Center, Dept. of Pathology Report Date/Time:
+<br>
+123 University Way, City, ST 12345 02/10/2014 16:40 <br>
+<br>
+Name: Doe, John Q. Age/Sex: 73/M DOB: 01/01/1941
+<br>
+Patient ID: 987654321 Status: Routine
+<br>
+Ordering Dr: Smith, Peter MD Physician Copy for: Smith, Jane MD
+<br><br>
+SPEC #: 223456 Collection Date/Time: 02/10/14 14:30<br>
+Received Date/Time: 02/10/14 15:00<br>
+SPECIMEN: Whole blood<br>
+ORDERED: Complete Blood Count and White Blood<br>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div></td>
+      <td>High</td>
+      <td><button type="button" class="btn btn-success">Connect</button>
+        <button type="button" class="btn btn-danger">Reject</button></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>B+</td>
+      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">Patient Name 4</button>
+
+        <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalScrollableTitle">History of the Patient</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+University Medical Center, Dept. of Pathology Report Date/Time:
+<br>
+123 University Way, City, ST 12345 02/10/2014 16:40 <br>
+<br>
+Name: Doe, John Q. Age/Sex: 73/M DOB: 01/01/1941
+<br>
+Patient ID: 987654321 Status: Routine
+<br>
+Ordering Dr: Smith, Peter MD Physician Copy for: Smith, Jane MD
+<br><br>
+SPEC #: 223456 Collection Date/Time: 02/10/14 14:30<br>
+Received Date/Time: 02/10/14 15:00<br>
+SPECIMEN: Whole blood<br>
+ORDERED: Complete Blood Count and White Blood<br>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div></td>
+      <td>High</td>
+      <td><button type="button" class="btn btn-success">Connect</button>
+        <button type="button" class="btn btn-danger">Reject</button></td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>B+</td>
+      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">Patient Name 3</button>
+
+        <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalScrollableTitle">History of the Patient</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+University Medical Center, Dept. of Pathology Report Date/Time:
+<br>
+123 University Way, City, ST 12345 02/10/2014 16:40 <br>
+<br>
+Name: Doe, John Q. Age/Sex: 73/M DOB: 01/01/1941
+<br>
+Patient ID: 987654321 Status: Routine
+<br>
+Ordering Dr: Smith, Peter MD Physician Copy for: Smith, Jane MD
+<br><br>
+SPEC #: 223456 Collection Date/Time: 02/10/14 14:30<br>
+Received Date/Time: 02/10/14 15:00<br>
+SPECIMEN: Whole blood<br>
+ORDERED: Complete Blood Count and White Blood<br>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div></td>
+      <td>High</td>
+      <td><button type="button" class="btn btn-success">Connect</button>
+        <button type="button" class="btn btn-danger">Reject</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<footer class="page-footer font-small blue">
+
+<!-- Copyright -->
+<div class="footer-copyright text-center py-3">© 2020 Copyright:
+<a href="https://dwoc.io/"> Delta Winter of Code</a>
+</div>
+<!-- Copyright -->
+
+</footer>
+      </div>
+
+      </html>
