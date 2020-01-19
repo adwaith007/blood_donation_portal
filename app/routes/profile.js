@@ -14,12 +14,12 @@ const authCheck = (req, res, next) => {
 
 router.get("/", authCheck, (req, res) => {
   console.log(req.user);
-  Request.find({ $or: [{ _id: req.user._id }] }).then(currentRequest => {
-    if (currentRequest) {
+  Request.find({ $or: [{ _id: req.user._id }] }).then(createdRequests => {
+    if (createdRequests) {
       var details = {
         user_details: req.user,
-        request_details: currentRequest,
-        no_of_requests: currentRequest.length
+        request_details: createdRequests,
+        no_of_requests: createdRequests.length
       };
       console.log(details);
       res.render("profile", { user: details });
