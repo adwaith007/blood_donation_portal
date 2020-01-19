@@ -15,12 +15,12 @@ const authCheck = (req, res, next) => {
 
 router.get("/", authCheck, (req, res) => {
   console.log(req.user);
-  Request.find().then(currentRequest => {
-    console.log(currentRequest);
+  Request.find().then(allRequests => {
+    console.log(allRequests);
     var details = {
       user_details: req.user,
-      request_details: currentRequest,
-      no_of_requests: currentRequest.length
+      request_details: allRequests,
+      no_of_requests: allRequests.length
     };
     console.log(details);
     res.render("admin", { user: details });
