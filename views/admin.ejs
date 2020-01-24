@@ -1,0 +1,147 @@
+<html>
+
+<head>
+    <title>
+        Blood Donation Portal
+    </title>
+</head>
+
+<body>
+    <ul>
+        <% if (user) { %>
+            <li><a href="/auth/logout">Logout</a></li>
+            <% } else { %>
+                <li><a href="/auth/login">Login</a></li>
+                <% } %>
+                    <li><a href="/">Homepage</a></li>
+                    <li><a href="/profile">Profile</a></li>
+    </ul>
+    <h1>
+        Welcome to your profile,
+        <%= user.user_details.username %>
+    </h1>
+    <form action="/donor/add" method="POST">
+        <input type="text" name="donorname" placeholder="Donor Name">
+        <input type="tel" name="mobilenumber" placeholder="Mobile Number">
+        <select name="bloodgroup">
+            <option value="A+">A+</option>
+            <option value="B+">B+</option>
+            <option value="O+">O+</option>
+            <option value="AB+">AB+</option>
+            <option value="A-">A-</option>
+            <option value="B-">B-</option>
+            <option value="AB-">AB-</option>
+            <option value="O-">O-</option>
+        </select>
+    </form>
+    <% if(user.no_of_requests) { %>
+        <h2>
+            Pending Requests
+        </h2>
+        <table>
+            <tr>
+                <th>
+                    Requester Name
+                </th>
+                <th>
+                    Request Blood Group
+                </th>
+                <th>
+                    Creation Date
+                </th>
+                <th>
+                    Status
+                </th>
+            </tr>
+            <% for(i=0;i<user.no_of_requests;i++) {%>
+                <% if(user.request_details[i].requestStatus=="pending") {%>
+                    <tr>
+                        <td>
+                            <%= user.request_details[i].requesterName %>
+                        </td>
+                        <td>
+                            <%= user.request_details[i].requestBloodGroup %>
+                        </td>
+                        <td>
+                            <%= user.request_details[i].createdOn %>
+                        </td>
+                        <td>
+                            <form action="/admin/status/change" method="POST">
+                                <button type="submit" name="status" value='{"id": "<%= user.request_details[i]._id %>" , "val": "accepted"}'>Accept</button>
+                                <button type="submit" name="status" value='{"id": "<%= user.request_details[i]._id %>" , "val": "rejected"}'>Reject</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% } %>
+                        <% } %>
+        </table>
+        <% } %>
+            <% if(user.no_of_requests) { %>
+                <h2>
+                    Accepted Requests
+                </h2>
+                <table>
+                    <tr>
+                        <th>
+                            Requester Name
+                        </th>
+                        <th>
+                            Request Blood Group
+                        </th>
+                        <th>
+                            Creation Date
+                        </th>
+                    </tr>
+                    <% for(i=0;i<user.no_of_requests;i++) {%>
+                        <% if(user.request_details[i].requestStatus=="accepted") {%>
+                            <tr>
+                                <td>
+                                    <%= user.request_details[i].requesterName %>
+                                </td>
+                                <td>
+                                    <%= user.request_details[i].requestBloodGroup %>
+                                </td>
+                                <td>
+                                    <%= user.request_details[i].createdOn %>
+                                </td>
+                            </tr>
+                            <% } %>
+                                <% } %>
+                </table>
+                <% } %>
+                    <% if(user.no_of_requests) { %>
+                        <h2>
+                            Rejected Requests
+                        </h2>
+                        <table>
+                            <tr>
+                                <th>
+                                    Requester Name
+                                </th>
+                                <th>
+                                    Request Blood Group
+                                </th>
+                                <th>
+                                    Creation Date
+                                </th>
+                            </tr>
+                            <% for(i=0;i<user.no_of_requests;i++) {%>
+                                <% if(user.request_details[i].requestStatus=="rejected") {%>
+                                    <tr>
+                                        <td>
+                                            <%= user.request_details[i].requesterName %>
+                                        </td>
+                                        <td>
+                                            <%= user.request_details[i].requestBloodGroup %>
+                                        </td>
+                                        <td>
+                                            <%= user.request_details[i].createdOn %>
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                                        <% } %>
+                        </table>
+                        <% } %>
+</body>
+
+</html>
