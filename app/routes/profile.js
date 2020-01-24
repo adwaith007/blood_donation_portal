@@ -27,6 +27,21 @@ router.get("/", authCheck, (req, res) => {
   });
 });
 
+app.post("/request/new", (req, res) => {
+  var bloodgroup = req.body.bloodgroup;
+  new Request({
+    owner: req.user._id,
+    bloodGroup: bloodgroup,
+    createdOn: new Date(),
+    requestStatus: "pending"
+  })
+    .save()
+    .then(currentRequest => {
+      console.log(currentRequest);
+    });
+  res.redirect("/profile");
+});
+
 router.post("/request/cancel", (req, res) => {
   var status = JSON.parse(req.body.cancel);
   console.log(req.body.status);

@@ -72,21 +72,6 @@ app.get("/", (req, res) => {
   res.render("login.ejs");
 });
 
-app.post("/request/new", (req, res) => {
-  var bloodgroup = req.body.bloodgroup;
-  new Request({
-    owner: req.user._id,
-    bloodGroup: bloodgroup,
-    createdOn: new Date(),
-    requestStatus: "pending"
-  })
-    .save()
-    .then(currentRequest => {
-      console.log(currentRequest);
-    });
-  res.redirect("/profile");
-});
-
 app.listen(config.port, () => {
   console.log(`Server running on port ${config.port}`);
 });
